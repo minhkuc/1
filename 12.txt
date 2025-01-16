@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+            background-color: red;
+            transform: rotate(-45deg);
+            animation: heartbeat 1s infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 90px;
+            background-color: red;
+            border-radius: 50%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .heart::after {
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.2) rotate(-45deg);
+            }
+        }
+
+        p {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="heart"></div>
+        <p>My Love for You is Eternal ❤️</p>
+    </div>
+</body>
+</html>
+
